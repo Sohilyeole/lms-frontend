@@ -30,6 +30,7 @@ function AboutUs() {
           </div>
         </div>
         <div className="carousel w-1/2  m-auto my-16 ">
+            {/*bellow code can run but we can transfer same code theough component called carouselslide also this code taking from desyiui carousel isteeed of writing component 5 times we can create arrray in helpers and apply map on it*/}
            
             {/* <div id="slide1" className="carousel-item relative w-full">
                 <div className ="flex flex-col items-center justify-center gap-4 px-[15%]">
