@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 function Coursedescription() {
   const { state } = useLocation();
-  console.log(state)
+ 
   const {role,data}=useSelector((state)=>state.auth)
 
   return (
