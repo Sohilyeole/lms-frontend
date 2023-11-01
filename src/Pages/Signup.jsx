@@ -28,14 +28,18 @@ function Signup() {
 
     // if image exists then getting the url link of it
     if (uploadedImage) {
-      setsignupData({
-        ...signupData,
-        avatar: uploadedImage,
-      });
+      // setsignupData({
+      //   ...signupData,
+      //   avatar: uploadedImage,
+      // });
       const fileReader = new FileReader();
       fileReader.readAsDataURL(uploadedImage);
       fileReader.addEventListener("load", function () {
         setpreviewImage(this.result);
+        setsignupData({
+          ...signupData,
+        avatar: uploadedImage,
+        })
       });
     }
   };
@@ -78,6 +82,19 @@ function Signup() {
       password: signupData.password,
       avatar: signupData.avatar,
     };
+
+    // const formData = new FormData();
+    // formData.append("fullName", signupData.fullName);
+    // formData.append("email", signupData.email);
+    // formData.append("password", signupData.password);
+    // formData.append("avatar", signupData.avatar);
+
+    // let formData =  await new FormData();
+    // formData.append("fullName", signupData.fullName);
+    // formData.append("email", signupData.email);
+    // formData.append("password", signupData.password);
+    // formData.append("avatar",signupData.avatar);
+    
 
     const res = await dispatch(createAccount(formData));
     if (res.payload.sucess == true) {

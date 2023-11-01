@@ -10,7 +10,7 @@ return(
       <div className="bg-black text-white  px-2 text-sm rounded rotate-12 absolute">
         Acess denied
       </div>
-      <button onClick={()=>navigate(-1)} className="mt-5">
+      <button onClick={()=> navigate(-1)} className="mt-5">
        
        <span className="relative block px-8 py-3 bg-[#1a2238] border border-current">Go Back</span>
       </button>

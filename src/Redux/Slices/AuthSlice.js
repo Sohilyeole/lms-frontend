@@ -8,8 +8,17 @@ const initialState = {
 };
 
 export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
+
   try {
-    let res = axiosInstance.post("user/register", data);
+    let formData =  await new FormData();
+   formData.append("fullName", data.fullName);
+    formData.append("email", data.email);
+    formData.append("password", data.password);
+    formData.append("avatar",data.avatar);
+
+    
+    
+    let res = axiosInstance.post("user/register", formData,{ headers: {"Content-Type": "multipart/form-data" } });
 
     toast.promise(res, {
       loading: "Wait! Creating your account",
