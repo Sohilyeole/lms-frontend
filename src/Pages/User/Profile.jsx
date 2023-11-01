@@ -3,9 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import HomeLayout from "../../Layouts/HomeLayout";
 import { Link } from "react-router-dom";
 function Profile(){
-    const dispatch=useDispatch();
-    const userData=useSelector((state)=>state?.auth?.data);
-    console.log(userData)
+    
+    
+  const userData = useSelector((state) => state?.auth?.data);
+
+    // console.log("sohil",userData)
+    useEffect(() => {
+        // getting user details
+        
+      }, []);
     
 return(
    <HomeLayout>
@@ -34,7 +40,7 @@ return(
                 </Link>
             </div>
             {console.log(userData)}
-            {userData?.subscription?.status ==="active" &&(
+            {userData?.subsciprtion?.status ==="active" &&(
              <button className="w-full bg-red-600 hover:bg-red-500 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center">
                 Cancel Subscription
              </button>
