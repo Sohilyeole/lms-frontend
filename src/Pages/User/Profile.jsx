@@ -7,11 +7,8 @@ function Profile(){
     
   const userData = useSelector((state) => state?.auth?.data);
 
-    // console.log("sohil",userData)
-    useEffect(() => {
-        // getting user details
-        
-      }, []);
+
+    
     
 return(
    <HomeLayout>
@@ -32,10 +29,10 @@ return(
 
             </div>
             <div className="flex items-center justify-between gap-2">
-                <Link to="/changepassword"  className=" w-1/2 bg-yellow-600 hover:bg-yellow-400 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center">
+                <Link to="/changepassword"  className=" w-1/2 bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-md font-semibold py-2 cursor-pointer text-center">
                     <button>Chnge Password</button>
                 </Link>
-                <Link to="/user/editprofile"  className=" w-1/2 bg-yellow-600 hover:bg-yellow-400 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center">
+                <Link to="/user/editprofile"  className=" w-1/2 border border-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-md font-semibold py-2 cursor-pointer text-center">
                     <button className=" w">Edit Profile</button>
                 </Link>
             </div>

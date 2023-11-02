@@ -36,8 +36,7 @@ function CreateCourse() {
         });
       });
     }
-    console.log(userInput.previewImage)
-    console.log(userInput.thumbnail)
+  
   }
   function handleUserInput(e) {
     const { name, value } = e.target;

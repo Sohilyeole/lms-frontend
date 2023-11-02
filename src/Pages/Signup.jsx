@@ -38,8 +38,8 @@ function Signup() {
         setpreviewImage(this.result);
         setsignupData({
           ...signupData,
-        avatar: uploadedImage,
-        })
+          avatar: uploadedImage,
+        });
       });
     }
   };
@@ -94,7 +94,6 @@ function Signup() {
     // formData.append("email", signupData.email);
     // formData.append("password", signupData.password);
     // formData.append("avatar",signupData.avatar);
-    
 
     const res = await dispatch(createAccount(formData));
     if (res.payload.sucess == true) {
