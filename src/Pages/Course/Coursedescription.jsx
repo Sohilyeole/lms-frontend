@@ -1,17 +1,18 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import HomeLayout from "../../Layouts/HomeLayout";
 import { useSelector } from "react-redux";
 
 function Coursedescription() {
   const { state } = useLocation();
+  const navigate=useNavigate();
  
   const {role,data}=useSelector((state)=>state.auth)
 
   return (
     <HomeLayout>
       <div className="min-h-[90vh] pt-12 px-20 flex-col items-center justify-center text-white">
-        <div className="grid grid-cols-2 gap-10 py-10 relative ">
+        <div className=" sm:grid grid-cols-2 gap-10 py-10 relative ">
           <div className="space-y-5  ">
             <img src={state?.thumbnail?.secure_url} alt="thumbnail" className="h-[18rem]  w-full  " />
             <div className="space-y-4">
@@ -35,7 +36,7 @@ function Coursedescription() {
                         watch lectures
                     </button>
                 ):(
-                    <button className="bg-yellow-600 text-xl rounded-md font-bold px-5 py-3 w-full hover:bg-yellow-500 transition ease-in-out duration-300">
+                    <button className="bg-yellow-600 text-xl rounded-md font-bold px-5 py-3 w-full hover:bg-yellow-500 transition ease-in-out duration-300" onClick={()=>navigate("/checkout")}>
                         Subscribe
                     </button>
                 )

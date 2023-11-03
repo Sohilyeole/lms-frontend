@@ -12,8 +12,8 @@ function Profile(){
     
 return(
    <HomeLayout>
-    <div className="min-h-[90vh] flex items-center justify-center">
-        <div className="my-10 flex flex-col gap-4 rounded-lg p-4 text-white  shadow-[0_0_10px_black]">
+    <div className=" px-1 h-[90vh] sm:min-h-[90vh] flex items-center justify-center">
+        <div className="my-10 flex flex-col gap-4 rounded-lg p-4  text-white shadow-[0_0_10px_black] ">
            <img 
            src={userData?.avtar?.secure_url}
            className="w-40 m-auto rounded-full border border-black"
@@ -21,7 +21,7 @@ return(
             />
             <h3 className="text-xl font-semibold text-center capitalize">{userData?.fullName}</h3>
             <div className="grid grid-cols-2 ">
-                <p>Email : </p> <p>{userData?.email}</p>
+                <p>Email : </p> <p  className="break-words">{userData?.email}</p>
                
                 <p>Role : </p> <p>{userData?.role}</p>
                
