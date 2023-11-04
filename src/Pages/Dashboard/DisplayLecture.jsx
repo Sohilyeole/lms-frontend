@@ -29,8 +29,8 @@ return(
             <div className="text-center text-2xl font-semibold text-yellow-500">
                 Course Name: {state?.state?.title}
             </div>
-            {lectures&& lectures.length>0 &&
-            <div className="flex justify-center gap-10 w-full ">
+            {(lectures&& lectures.length>0) ?
+            (<div className="flex justify-center gap-10 w-full ">
                 
                  <div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black]">
                     {/* {console.log(lectures && lectures[currentvideo]?.lecture?.secure_url)} */}
@@ -63,7 +63,7 @@ return(
                         )
                     })}
                  </ul>
-            </div>
+            </div>):(  role=="ADMIN" && (<button className="btn-primary px-2 py-1 rounded-md font-semibold text-sm" onClick={()=>navigate("/course/addlecture",{state:{...state}})}>Add new Lecture</button>))
              }
         </div>
     </HomeLayout>
