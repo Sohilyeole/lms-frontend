@@ -19,7 +19,7 @@ try {
 })
 
 
-export const addCourseLectures=createAsyncThunk("/course/lecture/get",async(data)=>{
+export const addCourseLectures=createAsyncThunk("/course/lecture/add",async(data)=>{
     try {
         const formData=new FormData();
         formData.append("lecture",data.lecture)
@@ -52,20 +52,34 @@ export const addCourseLectures=createAsyncThunk("/course/lecture/get",async(data
            toast.error(error?.response?.data?.message)
         }
         })
-const lectureSlice=createSlice({
-    name:"lecture",
+// const lectureSlice=createSlice({
+//     name:"lecture",
+//     initialState,
+//     reducers:{},
+//     extraReducers: (builder) => {
+//         builder
+//           .addCase(getCourseLectures.fulfilled, (state, action) => {
+//             state.lectures = action?.payload?.lectures;
+//           })
+//         //   .addCase(addCourseLectures.fulfilled, (state, action) => {
+//         //     state.lectures = action?.payload?.course?.lectures;
+//         //   });
+//       },
+// })
+const lectureSlice = createSlice({
+    name: "lecture",
     initialState,
-    reducers:{},
-    extraReducers:(builder)=>{
-        builder
-        .addCase(getCourseLectures.fulfilled,(state,action)=>{
-            state.lectures=action?.payload?.lectures
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(getCourseLectures.fulfilled, (state, action) => {
+            console.log(action);
+            state.lectures = action?.payload?.lectures;
         })
-        .addCase(addCourseLectures.fulfilled,(state,action)=>{
-            state.lectures=action?.payload?.course?.lectures
+        .addCase(addCourseLectures.fulfilled, (state, action) => {
+            console.log(action);
+            state.lectures = action?.payload?.course?.lectures;
         })
-
     }
-})
+});
 
 export default lectureSlice.reducer
