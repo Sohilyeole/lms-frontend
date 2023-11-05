@@ -19,12 +19,15 @@ function DisplayLecture(){
         await dispatch(getCourseLectures(courseId))
     }
     useEffect(()=>{
-        console.log(state.state._id)
-       if(!state) navigate("/courses")
-       dispatch(getCourseLectures(state.state._id))
+        
+        
+       if(!state.state) navigate("/courses")
+       dispatch(getCourseLectures(state?.state?._id))
     },[]);
 return(
+    
     <HomeLayout>
+        
         <div className=" flex flex-col gap-10 items-center justify-center min-h-[90vh] py-10 text-white mx-5">
             <div className="text-center text-2xl font-semibold text-yellow-500">
                 Course Name: {state?.state?.title}
@@ -66,7 +69,9 @@ return(
             </div>):(  role=="ADMIN" && (<button className="btn-primary px-2 py-1 rounded-md font-semibold text-sm" onClick={()=>navigate("/course/addlecture",{state:{...state}})}>Add new Lecture</button>))
              }
         </div>
+
     </HomeLayout>
+            
 )
 }
 export default DisplayLecture

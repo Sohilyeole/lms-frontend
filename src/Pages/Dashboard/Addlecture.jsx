@@ -22,7 +22,7 @@ function Addlecture(){
     const dispatch=useDispatch();
     
     const [userInput,setUserInput]=useState({
-        id:courseDetails.state._id,
+        id:courseDetails?.state?._id,
         lecture:undefined,
         description:"",
         title:"",
@@ -74,7 +74,9 @@ function Addlecture(){
     }, [])
 
  return(
+    
     <HomeLayout>
+        {console.log(courseDetails)}
       <div className="min-h-[90vh] text-white flex flex-col items-center justify-center gap-10 mx-16">
         <div className="flex flex-col gap-5 p-2 shadow-[0_0_10px_black] w-96 rounded-lg">
             <header className="flex items-center justify-center relative">
