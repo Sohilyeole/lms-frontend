@@ -72,9 +72,9 @@ return(
         <div className="min-h-[90vh] pt-5 flex flex-col flex-wrap gap-10 text-white">
             <h1 className="text-center text-5xl font-semibold text-yellow-500">Admin Dashboard</h1>
 
-            <div className="grid grid-cols-2 gap-5 m-auto mx-10">
+            <div className="sm:grid sm:grid-cols-2  gap-5 m-auto sm:mx-10">
                 <div className="flex flex-col items-center gap-10 p-5 shadow-lg rounded-md">
-                    <div className="w-80 h-80">
+                    <div className=" sm:h-80 sm:w-80 h-full w-full border ">
                         <Pie data={userData}/>
                     </div>
                     <div className="grid grid-cols-2 gap-5">
@@ -117,7 +117,7 @@ return(
                     </div>
                 </div>
             </div>
-            <div className="mx-[10%] w-[80%] flex flex-col items-center justify-center gap-10 mb-10">
+            <div className="mx-[10%]   w-[80%] flex flex-col items-center justify-center gap-10 mb-10 ">
                 <div className="flex w-full  items-center justify-between">
                     <h1 className="text-center text-3xl font-semibold">
                         Courses overview
@@ -128,7 +128,7 @@ return(
                     </button>
 
                 </div>
-                <table className="table overflow-x-scroll">
+                <table className="table overflow-x-scroll ">
                     <thead>
                         <tr>
                             <th>S No</th>

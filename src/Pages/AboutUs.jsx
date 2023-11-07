@@ -6,9 +6,9 @@ function AboutUs() {
    
   return (
     <HomeLayout>
-      <div className=" pl-20 pt-20 flex flex-col text-white">
-        <div className="flex itemz-center gap-5 mx-10 h-[75vh]">
-          <section className="w-1/2 space-y-10">
+      <div className=" sm:pl-20 sm:pt-20 pt-10 flex flex-col text-white">
+        <div className="flex sm:flex-row flex-col items-center gap-5 sm:mx-10 mx-5 sm:h-[75vh] ">
+          <section className="sm:w-1/2  space-y-10">
             <h1 className="text-5xl text-yellow-500 font-semibold">
               Affortable and quality education
             </h1>
@@ -20,7 +20,7 @@ function AboutUs() {
               mankind.
             </p>
           </section>
-          <div className="w-1/2">
+          <div className=" sm:w-1/2">
             <img
               src="src\Assets\Images\aboutMainImage.png"
               className="drop-shadow-2xl "
@@ -29,7 +29,7 @@ function AboutUs() {
             />
           </div>
         </div>
-        <div className="carousel w-1/2  m-auto my-16 ">
+        <div className="carousel sm:w-1/2 w-[85vw] m-auto my-16 ">
             {/*bellow code can run but we can transfer same code theough component called carouselslide also this code taking from desyiui carousel isteeed of writing component 5 times we can create arrray in helpers and apply map on it*/}
            
             {/* <div id="slide1" className="carousel-item relative w-full">
